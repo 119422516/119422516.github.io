@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  background-color: grey;
+}
+
+h1 {
+text-align:center;
+font-family: arial;
+}
+
+h2 {
+text-align:center;
+font-family: arial;
+}
+
+h3 {
+text-align:center;
+font-family: arial;
+}
+
+#scroller {
+        position: relative;
+    }
+    #scroller .innerScrollArea {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    #scroller ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    #scroller li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+    }
+</style>
+
+</style>
+</head>
+<body>
+
+<div class="a">
+<a href="homepage.html">
+         <img src="home.png"
+         width="200" height="155">
+      </a>
+	  </div>
+
+<h1>Interests</h1>
+
+<h2>Sports</h2>
+
+<div id="scroller" style="width: 800px; height: 200px;">
+    <div class="innerScrollArea">
+        <ul>
+            <li><img src="ccfc.jpg" width="200" height="200" /></li>
+            <li><img src="ccfc.png" width="200" height="200" /></li>
+            <li><img src="collig.png" width="200" height="200" /></li>
+            <li><img src="golf.jpg" width="200" height="200" /></li>
+            <li><img src="hurling.jpg" width="200" height="200" /></li>
+            <li><img src="irlsoccer.jpg" width="200" height="200" /></li>
+			<li><img src="manu.jpg" width="200" height="200" /></li>
+			<li><img src="phil.jpg" width="200" height="200" /></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" 
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var scroller = $('#scroller div.innerScrollArea');
+        var scrollerContent = scroller.children('ul');
+        scrollerContent.children().clone().appendTo(scrollerContent);
+        var curX = 0;
+        scrollerContent.children().each(function(){
+            var $this = $(this);
+            $this.css('left', curX);
+            curX += $this.outerWidth(true);
+        });
+        var fullW = curX / 1;
+        var viewportW = scroller.width();
+
+        scroller.css('overflow-x', 'auto');
+    });
+</script>
+
+<h3>Travel</h3>
+
+<div id="scroller" style="width: 800px; height: 200px;">
+    <div class="innerScrollArea">
+        <ul>
+            <li><img src="london.jpg" width="200" height="200" /></li>
+            <li><img src="amsterdam.jpg" width="200" height="200" /></li>
+            <li><img src="anne.jpg" width="200" height="200" /></li>
+            <li><img src="giant.jpg" width="200" height="200" /></li>
+            <li><img src="eiffel-tower.jpg" width="200" height="200" /></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+
